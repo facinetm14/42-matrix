@@ -8,8 +8,8 @@ def main():
     print(f"{' ' * 10} VECTORS {' ' * 10}")
     print(f"{'=' * 30}")
 
-    v1 = Vector[int]([2.0, 3.0])
-    v2 = Vector[int]([5.0, 7.0])
+    v1 = Vector([2.0, 3.0])
+    v2 = Vector([5.0, 7.0])
     k = 2.0
 
     print(f"{'-' * 10} Add {'-' * 10}")
@@ -31,8 +31,8 @@ def main():
     m1 = Matrix([[1.0, 2.0], [3.0, 4.0]])
     m2 = Matrix([[7.0, 4.0], [-2.0, 2.0]])
 
-    v3 = Vector[int]([1, 2])
-    v4 = Vector[int]([4, 6])
+    v3 = Vector([1, 2])
+    v4 = Vector([4, 6])
 
     m3 = Matrix([v1, v2])
     m4 = Matrix([v3, v4])
