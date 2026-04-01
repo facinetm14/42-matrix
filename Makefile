@@ -13,14 +13,8 @@ venv:
 lint:
 	$(VENV)/bin/ruff check *.py
 
-ex00:
-	$(PYTHON_BIN) -m src.ex00.main
-
-ex01:
-	$(PYTHON_BIN) -m src.ex01.main
-
-ex02:
-	$(PYTHON_BIN) -m src.ex02.main
+ex%:
+	$(PYTHON_BIN) -m src.$@.main
 
 clean:
 	rm -rf $(VENV)
@@ -28,4 +22,4 @@ clean:
 	rm -rf .pytest_cache
 
 
-.PHONY: setup venv lint ex00 clean
+.PHONY: setup venv lint ex% clean

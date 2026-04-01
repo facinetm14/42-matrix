@@ -56,6 +56,8 @@ This repository uses Python with generic type hints to stay close to those expec
 - Exercise 00: Add, Subtract and Scale Matrix or Vector
 - Exercise 01: Linear Combination
 - Exercise 02: Linear Interpolation (lerp)
+- Exercise 03: Dot product of vectors
+- Exercise 04: Norm
 
 ## Setup
 
