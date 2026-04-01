@@ -2,3 +2,4 @@
 matrix_display
 .venv
 src/*/__pycache__
+.codex
