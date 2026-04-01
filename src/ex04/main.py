@@ -4,7 +4,7 @@ from src.ex04.norm import Vector
 def main():
 
     print(f"{'=' * 30}")
-    print(f"{' ' * 10} VECTORS {' ' * 10}")
+    print(f"{' ' * 10} Norms {' ' * 10}")
     print(f"{'=' * 30}")
 
     v1 = Vector([0.0, 0.0, 0.0])
