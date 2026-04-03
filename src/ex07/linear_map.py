@@ -50,7 +50,7 @@ class Matrix(BaseMatrix):
             return None
         transposed_matrix = [Vector(list(row)) for row in zip(*matrix.vectors)]
         result_matrix = []
-        
+
         for v in self.vectors:
             row_i = [v.dot(t) for t in transposed_matrix]
             result_matrix.append(row_i)
