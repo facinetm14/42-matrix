@@ -5,10 +5,10 @@ from typing import TypeVar
 T = TypeVar("T", int, float)
 
 class Vector(BaseVector):
-  def dot(self, other: Vector) -> T | None:
+  def dot(self, other: Vector[T]) -> T | None:
     len_items = len(self.items)
     if  len_items != len(other.items):
-      raise None
+      return None
     
     dot_product = self.items[0] * other.items[0]
 
