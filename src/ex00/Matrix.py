@@ -9,10 +9,31 @@ T = TypeVar("T", int, float)
 class Matrix(Generic[T]):
 
     def __init__(self, vectors: list[Vector[T]] | list[list[T]]):
+        matrix_vectors: list[Vector[T]] = []
+
         if isinstance(vectors[0], Vector):
-            self.vectors = vectors
+            matrix_vectors.append(vectors[0])
+            vector_len = len(vectors[0].items)
+
+            for i in range(1, len(vectors)):
+                if len(vectors[i].items) != vector_len:
+                    raise ValueError(
+                        "Invalid Martrix: vectors should have the same size"
+                    )
+                matrix_vectors.append(vectors[i])
+
         else:
-            self.vectors = [Vector[T](v) for v in vectors]
+            matrix_vectors.append(Vector(vectors[0]))
+            vector_len = len(vectors[0])
+
+            for i in range(1, len(vectors)):
+                if len(vectors[i]) != vector_len:
+                    raise ValueError(
+                        "Invalid Martrix: vectors should have the same size"
+                    )
+                matrix_vectors.append(Vector(vectors[i]))
+
+        self.vectors = matrix_vectors
 
     def __repr__(self):
         return f"{self.vectors}"
@@ -25,21 +46,34 @@ class Matrix(Generic[T]):
 
     def add(self, m: Matrix[T]) -> Matrix[T]:
         if len(m.vectors) != len(self.vectors):
-            raise ArithmeticError(
-                "You can't add 2 Matrixs with differents vectors size"
-            )
-        return Matrix[T](
-            [self.vectors[i].add(m.vectors[i]) for i in range(0, len(self.vectors))]
-        )
+            return None
+        matrix_vectors: list[Vector[T]] = []
+
+        for i in range(0, len(self.vectors)):
+            sum_vec = self.vectors[i].add(m.vectors[i])
+            if sum_vec == None:
+                return None
+            matrix_vectors.append(sum_vec)
+        return Matrix(matrix_vectors)
 
     def sub(self, m: Matrix[T]) -> Matrix[T]:
         if len(m.vectors) != len(self.vectors):
-            raise ArithmeticError(
-                "You can't sub 2 Matrixs with differents vectors size"
-            )
-        return Matrix[T](
-            [self.vectors[i].sub(m.vectors[i]) for i in range(0, len(self.vectors))]
-        )
+            return None
+        matrix_vectors: list[Vector[T]] = []
+
+        for i in range(0, len(self.vectors)):
+            sub_vec = self.vectors[i].sub(m.vectors[i])
+            if sub_vec == None:
+                return None
+            matrix_vectors.append(sub_vec)
+        return Matrix(matrix_vectors)
 
     def scl(self, k: T):
-        return Vector[T]([v.scl(k) for v in self.vectors])
+        matrix_vectors: list[Vector[T]] = []
+
+        for i in range(0, len(self.vectors)):
+            sub_vec = self.vectors[i].scl(k)
+            if sub_vec == None:
+                return None
+            matrix_vectors.append(sub_vec)
+        return Matrix(matrix_vectors)
