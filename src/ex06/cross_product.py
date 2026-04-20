@@ -17,4 +17,4 @@ def cross_product(u: Vector[T], v: Vector[T]) -> Vector[T]:
     p2 = (u.items[2] * v.items[0]) - (u.items[0] * v.items[2])
     p3 = (u.items[0] * v.items[1]) - (u.items[1] * v.items[0])
 
-    return [p1, p2, p3]
+    return Vector([p1, p2, p3])

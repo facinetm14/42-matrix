@@ -10,17 +10,17 @@ def main():
 
     v1 = Vector([0.0, 0.0, 1.0])
     v2 = Vector([1.0, 0.0, 0.0])
-    print(f"cos({v1}, {v2}) = {cross_product(v1, v2)}")
+    print(f"cross({v1}, {v2}) = {cross_product(v1, v2)}")
     print(f"{'' * 30}")
 
     v3 = Vector([1.0, 2.0, 3.0])
     v4 = Vector([4.0, 5.0, 6.0])
-    print(f"cos({v3}, {v4}) = {cross_product(v3, v4)}")
+    print(f"cross({v3}, {v4}) = {cross_product(v3, v4)}")
     print(f"{'' * 30}")
 
     v5 = Vector([4.0, 2.0, -3.0])
     v6 = Vector([-2.0, -5.0, 16.0])
-    print(f"cos({v5}, {v6}) = {cross_product(v5, v6)}")
+    print(f"cross({v5}, {v6}) = {cross_product(v5, v6)}")
     print(f"{'' * 30}")
 
 

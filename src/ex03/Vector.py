@@ -7,9 +7,8 @@ T = TypeVar("T", int, float)
 class Vector(BaseVector):
   def dot(self, other: Vector[T]) -> T | None:
     len_items = len(self.items)
-    if  len_items != len(other.items):
+    if  len_items == 0 or len_items != len(other.items):
       return None
-    
     dot_product = self.items[0] * other.items[0]
 
     if len_items == 1:

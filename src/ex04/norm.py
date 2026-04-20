@@ -17,4 +17,6 @@ class Vector(BaseVector):
         return pow(norm, 0.5)
 
     def norm_inf(self) -> float:
+        if len(self.items) == 0:
+            return 0
         return max([item if item >= 0 else item * (-1) for item in self.items])
