@@ -18,7 +18,7 @@ class Matrix(Generic[T]):
             for i in range(1, len(vectors)):
                 if len(vectors[i].items) != vector_len:
                     raise ValueError(
-                        "Invalid Martrix: vectors should have the same size"
+                        "Invalid Matrix: vectors should have the same size"
                     )
                 matrix_vectors.append(vectors[i])
 
@@ -29,7 +29,7 @@ class Matrix(Generic[T]):
             for i in range(1, len(vectors)):
                 if len(vectors[i]) != vector_len:
                     raise ValueError(
-                        "Invalid Martrix: vectors should have the same size"
+                        "Invalid Matrix: vectors should have the same size"
                     )
                 matrix_vectors.append(Vector(vectors[i]))
 

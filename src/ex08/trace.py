@@ -5,7 +5,10 @@ from typing import TypeVar
 T = TypeVar("T", float, int)
 
 class Matrix(BaseMatrix):
-  def trace(self) -> T:
+  def trace(self) -> T | None:
+    if not self.vectors:
+      return None
+
     col = len(self.vectors[0].items)
     if col != len(self.vectors):
       return None

@@ -11,6 +11,7 @@ def linear_combination(vectors: list[Vector[T]], scalars: list[T]) -> Vector[T] 
 
     if len_scalars < 1 or len(vectors) != len_scalars:
         return None
+    
     result = vectors[0].scl(scalars[0])
 
     if len_scalars == 1 or result == None:
