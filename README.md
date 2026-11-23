@@ -1,5 +1,7 @@
 # Matrix
 
+To follow an operation from definition to example, start with [the vector implementation](src/ex00/Vector.py), then compare [linear combination](src/ex01/linear_combination.py) and [interpolation](src/ex02/linear_interpolation.py).
+
 Python implementation of the 42 project "Enter the Matrix", an introduction to linear algebra through small, focused exercises on vectors, matrices, and fundamental operations.
 
 ## Project Goal
